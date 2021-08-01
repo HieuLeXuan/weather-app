@@ -1,0 +1,13 @@
+.main__container {
+    width: 100vw;
+}
+
+.main__body {
+    display: flex;
+    justify-content: space-around;
+    -webkit-box-align: center;
+    align-items: center;
+    flex-wrap: wrap;
+    min-height: 90vh;
+    position: relative;
+}
