@@ -10,33 +10,22 @@ import { UiService } from './service/ui.service';
 })
 export class AppComponent implements OnInit, OnDestroy {
   showMenu = false;
-  darkModeActive!: boolean;
 
   userEmail!: null | string;
   sub1: any;
 
   constructor(
-    public ui: UiService,
-    public fb: FbService,
+    public uiService: UiService,
+    public fbService: FbService,
     public router: Router,
   ) {}
 
   ngOnInit() {
-    window.scroll(0, 0);
-
-    this.sub1 = this.ui.darkModeState.subscribe((value) => {
-      this.darkModeActive = value;
-    });
-
-    this.fb.auth.authState.subscribe((auth__state) => {
+    this.fbService.auth.authState.subscribe((auth__state) => {
       if (auth__state) {
         this.userEmail = auth__state.email;
       }
     });
-  }
-
-  modeToggleSwitch() {
-    this.ui.darkModeState.next(!this.darkModeActive);
   }
 
   ngOnDestroy() {

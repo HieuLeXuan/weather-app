@@ -1,8 +1,8 @@
 <div class="main__container">
     <app-header></app-header>
     <div class="main__body">
+        <app-weather-card *ngFor="let city of cities;" [city]="city?.city_name"></app-weather-card>
         <app-add-card></app-add-card>
-        <!-- <app-weather-card></app-weather-card> -->
     </div>
 </div>
     

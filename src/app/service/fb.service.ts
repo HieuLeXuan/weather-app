@@ -2,9 +2,12 @@ import { Injectable } from '@angular/core';
 import { AngularFireAuth } from '@angular/fire/auth';
 import {
   AngularFirestore,
+  AngularFirestoreCollection,
   AngularFirestoreDocument
 } from '@angular/fire/firestore';
-import { first } from 'rxjs/operators';
+import { Observable } from 'rxjs';
+import { first, map } from 'rxjs/operators';
+import { DataWeather } from '../pages/models/data_weather.model';
 import { User } from './user';
 
 @Injectable({
@@ -12,6 +15,9 @@ import { User } from './user';
 })
 export class FbService {
   userData: any;
+
+  weatherCollection!: AngularFirestoreCollection<DataWeather>;
+  weathers: Observable<DataWeather[]>;
 
   constructor(public auth: AngularFireAuth, public fs: AngularFirestore) {
     this.auth.authState.subscribe((user) => {
@@ -22,6 +28,19 @@ export class FbService {
         localStorage.removeItem('user');
       }
     });
+
+    this.weatherCollection = this.fs.collection<DataWeather>('data_weather');
+    this.weathers = this.weatherCollection.snapshotChanges().pipe(
+      map((actions) => {
+        return actions.map((a) => {
+          const data = a.payload.doc.data() as DataWeather;
+          const id = a.payload.doc.id;
+          return { id, ...data };
+        });
+      })
+    );
+
+    console.log(this.weatherCollection, this.weathers);
   }
 
   isAuth() {
@@ -54,22 +73,20 @@ export class FbService {
     });
   }
 
-  // getCities() {
-  //   return this.auth.uid().pipe(
-  //     switchMap((uid: any) => {
-  //       return this.fs.read(`${uid}`);
-  //     })
-  //   );
-  // }
+  getCity(name?: string) {
+    return this.weathers.pipe(
+      map((weather) => {
+        let fl = weather.filter((wea) => wea.city_name === name);
+        return fl.length > 0 ? fl[0] : false;
+      })
+    );
+  }
 
-  // addCity(name: string) {
-  //   return this.auth.uid().pipe(
-  //     switchMap((uid) => {
-  //       return this.fs
-  //         .write(`${uid}/${name}`, { name, added: new Date() })
-  //         .pipe(first());
-  //     }),
-  //     first()
-  //   );
-  // }
+  addCity(dataWeather: any) {
+    return this.fs.collection('data_weather').add(dataWeather);
+  }
+
+  updateCity(id: string, weather: DataWeather) {
+    return this.weatherCollection.doc(id).update(weather);
+  }
 }
