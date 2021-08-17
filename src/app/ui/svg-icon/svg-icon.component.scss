@@ -1,8 +1,14 @@
 .add_card-icon {
-    width: 9rem;
+    display: flex;
+    justify-content: center;
+    width: 9.5rem;
 }
 
 .weather_card-icon {
-    width: 6rem;
-    height: 6.5rem;
+    height: 9rem;
 }
+
+.details_card-icon {
+    height: 6rem;
+}
+

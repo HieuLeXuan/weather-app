@@ -108,13 +108,13 @@
   padding: 1rem 2rem;
   color: white;
   margin-top: 0.5rem;
-  background-color: #2b244d;
+  background-color: var(--btn-color);
   font-size: 1rem;
   font-weight: bold;
 }
 
 .add-city-btn:hover {
-  background-color: var(--btn-color);
+  opacity: 0.7;
 }
 
 // .weather-icon__container > svg {

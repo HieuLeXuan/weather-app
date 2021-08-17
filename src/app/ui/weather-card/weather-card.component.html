@@ -1,4 +1,4 @@
-<section class="weather__card" 
+<section class="weather__card" (click)="openDetails()"
         *ngIf="addMode ? cityName : true"
         [ngClass]="{'weather__card-add': addMode}">
     <span class="city-name__text">{{cityName}}</span>

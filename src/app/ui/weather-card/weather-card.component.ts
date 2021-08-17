@@ -133,4 +133,10 @@ export class WeatherCardComponent implements OnInit, OnDestroy {
       isAddCity.unsubscribe();
     });
   }
+
+  openDetails() {
+    if(!this.addMode) {
+      this.router.navigateByUrl('/details/' + this.cityName);
+    }
+  }
 }
