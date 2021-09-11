@@ -39,8 +39,6 @@ export class FbService {
         });
       })
     );
-
-    console.log(this.weatherCollection, this.weathers);
   }
 
   isAuth() {

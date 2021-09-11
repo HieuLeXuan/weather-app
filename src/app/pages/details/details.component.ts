@@ -69,8 +69,6 @@ export class DetailsComponent implements OnInit, OnDestroy {
           this.hum = payload[0].main.humidity;
           this.wind = Math.round(Math.round(payload[0].wind.speed));
           const dates = {};
-
-          console.log(payload);
           for (const res of payload[1]) {
             const date = new Date(res.dt_txt).toDateString().split(' ')[0];
             if ((dates as any)[date]) {
@@ -91,8 +89,6 @@ export class DetailsComponent implements OnInit, OnDestroy {
           });
           delete (dates as any)[Object.keys(dates)[0]];
           this.daysForecast = dates;
-
-          console.log(this.daysForecast);
         },
         (err) => {
           this.toater.error(err.error.message);

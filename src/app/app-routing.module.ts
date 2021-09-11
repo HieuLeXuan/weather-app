@@ -9,12 +9,12 @@ import { LoginComponent } from './pages/login/login.component';
 import { SignupComponent } from './pages/signup/signup.component';
 
 const routes: Routes = [
-  { path: '', component: LoginComponent },
+  { path: '', component: LoginComponent, canActivate: [AppGuards] },
   { path: 'login', component: LoginComponent, canActivate: [AuthGuards] },
   { path: 'signup', component: SignupComponent, canActivate: [AuthGuards] },
   { path: 'home', component: HomeComponent, canActivate: [AppGuards] },
-  { path: 'add', component: AddComponent },
-  { path: 'details/:city', component: DetailsComponent },
+  { path: 'add', component: AddComponent, canActivate: [AppGuards] },
+  { path: 'details/:city', component: DetailsComponent, canActivate: [AppGuards] },
   { path: '**', redirectTo: '' },
 ];
 

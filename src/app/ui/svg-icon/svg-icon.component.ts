@@ -11,9 +11,7 @@ export class SvgIconComponent implements OnInit {
 
   constructor() { }
 
-  ngOnChanges(): void {
-    console.log(this.state);
-  }
+  ngOnChanges(): void {}
 
   ngOnInit(): void {
   }
