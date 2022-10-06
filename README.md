@@ -21,3 +21,10 @@
 
 +getById();
 +trả về một object, nếu không lấy cận thận sẽ dính NullPointerException
+
+# Mối quan hệ @ManyToMany:
++Xác định ai là chủ trong quan hệ này.
++Nên cấu hình mối quan hệ hai chiều trong JPA, không nên cấu hình mối quan hệ một chiều. Chỉ rõ quan hệ với entity kia bởi thuộc tính nào?.
++Đồng bộ trạng thái giữa hai entity với nhau:
+  -Dùng Cascade đúng.
+  -.....???
