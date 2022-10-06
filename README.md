@@ -1,4 +1,4 @@
-# note spring boot knowledge
+# Note Spring Boot Knowledge
 
 # @GeneratedValue:
 + Ví dụ sau đây ta khai báo khóa chính là kiểu số. Thì giá trị của trường studentId sẽ tự động tăng dần lên và nó là duy nhất trong table.
