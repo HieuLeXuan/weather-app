@@ -28,3 +28,19 @@
 * Đồng bộ trạng thái giữa hai entity với nhau:
   -Dùng Cascade đúng.
   -.....???
+
+
+
+
+
+
+# HIBERNATE
+
+1. ORM: Object Relational Mapping
+  * Kỹ thuật lập trình
+  * Ánh xạ giữa các bảng trong db và các lớp đối tượng khi lập trình Java.
+  * Giúp lập trình viên tập trung vào logic của bài toán thôi.
+  * Hỗ trợ hầu hết mọi cơ sở dữ liệu.
+  
+2. Kiến trúc hibernate:
+  * ![image](https://user-images.githubusercontent.com/56450869/194739596-59e4f154-b23f-441d-ba66-314dc2103044.png)
