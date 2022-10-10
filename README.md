@@ -12,7 +12,7 @@
 * 1: @OneToMany(mappedBy): một cart có nhiều item
 * n: @ManyToOne(), JoinTable(), JoinColumn(): để định nghĩa cho biến (1) để tạo liên kết giữa hai entity.
 
-2 Mối quan hệ @ManyToMany:
+2. Mối quan hệ @ManyToMany:
 * Xác định ai là chủ trong quan hệ này.
 * Nên cấu hình mối quan hệ hai chiều trong JPA, không nên cấu hình mối quan hệ một chiều. Chỉ rõ quan hệ với entity kia bởi thuộc tính nào?.
 * Đồng bộ trạng thái giữa hai entity với nhau:
