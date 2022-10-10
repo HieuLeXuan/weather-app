@@ -18,6 +18,15 @@
 * Đồng bộ trạng thái giữa hai entity với nhau:
   -Dùng Cascade đúng.
   -.....???
+  
+  ## Fetch in Mapping:
+   1. Eager and Lazy
+   2. Default fetc types:
+    + @OneToOne eager
+    + @OneToMany lazy
+    + @ManyToOne eager
+    + @ManyToMany lazy
+   3. best practice => use lazy loading
 
 # Optional:
 1. findById():
