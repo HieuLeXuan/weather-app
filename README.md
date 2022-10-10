@@ -7,12 +7,10 @@
 2. @GeneratedValue (strategy = GenerationType.IDENTITY):
 * Lúc này giá trị cửa studentId sẽ là 1,2,3,4,5 …
 
-
-
 # Relationship table
 1. 1...n
-* 1: @OneToMany: một cart có nhiều item
-* n: @ManyToOne, JoinColumn: để định nghĩa cho biến (1) để tạo liên kết giữa hai entity.
+* 1: @OneToMany(mappedBy): một cart có nhiều item
+* n: @ManyToOne(), JoinTable(), JoinColumn(): để định nghĩa cho biến (1) để tạo liên kết giữa hai entity.
 
 2 Mối quan hệ @ManyToMany:
 * Xác định ai là chủ trong quan hệ này.
@@ -27,9 +25,6 @@
 
 2. getById();
 * trả về một object, nếu không lấy cận thận sẽ dính NullPointerException
-
-
-
 
 
 
