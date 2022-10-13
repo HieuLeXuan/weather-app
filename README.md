@@ -47,3 +47,21 @@
   
 2. Kiến trúc hibernate:
   * ![image](https://user-images.githubusercontent.com/56450869/194739596-59e4f154-b23f-441d-ba66-314dc2103044.png)
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  Note create db for final project:
+  + Role and Operation: những thành phần không đổi nên tạo ENUM trong BE.
+  + Task Table: thiếu userId (1 task 1 người làm).
+  + Comment Table: thiếu userId (ai comment trong cái comment đó).
+  
+  
