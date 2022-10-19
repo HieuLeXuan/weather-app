@@ -52,16 +52,12 @@
   
   
   
-  
-  
-  
-  
-  
-  
-  
-  Note create db for final project:
-  + Role and Operation: những thành phần không đổi nên tạo ENUM trong BE.
-  + Task Table: thiếu userId (1 task 1 người làm).
-  + Comment Table: thiếu userId (ai comment trong cái comment đó).
+# JWT:
+ 1. header.payload.signature
+  * header: type, algorithm
+  * pauload
+  * signature (seret key)
+ 2. Ném một token vào hệ thống làm sao để biết là token vừa genr ra?
+    * Dựa vào signature (seret key) mỗi cái khác nhau, dựa vào đó mà nó compare xem giống nhau hay không.
   
   
